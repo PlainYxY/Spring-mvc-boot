@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-        <bean id="bookDao1" name="dao" class="com.yxy.dao.impl.BookDaoImpl"/>
+        <bean id="bookDao1" name="dao" class="com.yxy.dao.impl.BookDaoImpl" scope="prototype"/>
 
         <bean id="bookService" name="service service2 serviceEbi" class="com.yxy.service.impl.BookServiceImpl">
                 <property name="bookDao" ref="bookDao1"/>
