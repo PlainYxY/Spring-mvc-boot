@@ -6,9 +6,11 @@
 
         <!--2.配置bean-->
         <!--bean标签表示配置bean
-        id是给bean起名字
-        class是定义bean的类型，找到bean位置-->
-        <bean id="bookDao1" class="com.yxy.dao.impl.BookDaoImpl"/>
+            id是给bean起名字
+            class是定义bean的类型，找到bean位置
+            name是起别名的，多个别名中间可以用 空格、逗号、分号 隔开
+        -->
+        <bean id="bookDao1" name="dao dao2 dao3" class="com.yxy.dao.impl.BookDaoImpl"/>
 
         <!--多一个 property 标签,表示是Service里注入Dao-->
         <bean id="bookService" class="com.yxy.service.impl.BookServiceImpl">
