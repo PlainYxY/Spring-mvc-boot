@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+        <bean id="bookDao1" name="book" class="com.yxy.dao.impl.BookDaoImpl" scope="singleton">
+                <property name="count" value="10"/>
+                <property name="dataBaseName" value="Mysql"/>
+        </bean>
+        <bean id="userDao" name="user" class="com.yxy.dao.impl.UserDaoImpl"/>
+
+
+        <bean id="bookService" name="service service2 serviceEbi" class="com.yxy.service.impl.BookServiceImpl">
+                <property name="bookDao" ref="bookDao1"/>
+                <property name="userDao" ref="userDao"/>
+        </bean>
+
+</beans>

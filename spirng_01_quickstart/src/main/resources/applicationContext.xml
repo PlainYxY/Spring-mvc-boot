@@ -9,8 +9,9 @@
             id是给bean起名字
             class是定义bean的类型，找到bean位置
             name是起别名的，多个别名中间可以用 空格、逗号、分号 隔开
+            scope是设置bean作用域的，默认为单例bean (singleton) 多例bean为(prototype)
         -->
-        <bean id="bookDao1" name="dao dao2 dao3" class="com.yxy.dao.impl.BookDaoImpl"/>
+        <bean id="bookDao1" name="dao dao2 dao3" class="com.yxy.dao.impl.BookDaoImpl" scope="prototype"/>
 
         <!--多一个 property 标签,表示是Service里注入Dao-->
         <bean id="bookService" class="com.yxy.service.impl.BookServiceImpl">
