@@ -11,10 +11,11 @@ public class BookDaoImpl implements BookDao {
         System.out.println("book dao save" + ","  + count + "," + dataBaseName);
     }
 
+    // setter注入
     public void setCount(int count) {
         this.count = count;
     }
-
+    // setter注入
     public void setDataBaseName(String dataBaseName) {
         this.dataBaseName = dataBaseName;
     }

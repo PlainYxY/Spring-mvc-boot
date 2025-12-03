@@ -15,11 +15,8 @@ public class BookServiceImpl implements BookService {
         userDao.save();
     }
 
-    public void setBookDao(BookDao bookDao) {
-        this.bookDao = bookDao;
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
+    public BookServiceImpl(BookDao bookDao2,UserDao userDao2) {
+        this.bookDao = bookDao2;
+        this.userDao = userDao2;
     }
 }

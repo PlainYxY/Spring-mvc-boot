@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <!--方式一.构造方法实例化bean-->
+        <!--方式一.构造器实例化bean-->
         <bean id="bookDao" class="com.yxy.dao.impl.BookDaoImpl"/>
 
         <!--方式二.使用静态工厂实例化bean-->

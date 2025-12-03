@@ -3,15 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-
         <bean id="bookDao1" name="book" class="com.yxy.dao.impl.BookDaoImpl" scope="singleton">
+                <!--方式一、setter注入 【自己开发推荐setter注入】 (DI依赖注入【例如Dao层注入简单类型，或者Service注入Dao对象引用类型】)-->
+                <!--这是注入简单类型的 （比如将简单类型注入到Dao层）-->
                 <property name="count" value="10"/>
                 <property name="dataBaseName" value="Mysql"/>
         </bean>
         <bean id="userDao" name="user" class="com.yxy.dao.impl.UserDaoImpl"/>
 
-
         <bean id="bookService" name="service service2 serviceEbi" class="com.yxy.service.impl.BookServiceImpl">
+                <!--这是注入引用类型的 （比如将Dao引用类型对象注入到Service层）-->
                 <property name="bookDao" ref="bookDao1"/>
                 <property name="userDao" ref="userDao"/>
         </bean>

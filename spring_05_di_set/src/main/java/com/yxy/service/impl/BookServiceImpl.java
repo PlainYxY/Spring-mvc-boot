@@ -15,10 +15,11 @@ public class BookServiceImpl implements BookService {
         userDao.save();
     }
 
+    // setter注入
     public void setBookDao(BookDao bookDao) {
         this.bookDao = bookDao;
     }
-
+    // setter注入
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

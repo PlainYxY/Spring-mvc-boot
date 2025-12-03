@@ -8,14 +8,11 @@ public class BookDaoImpl implements BookDao {
     String dataBaseName;
 
     public void save() {
-        System.out.println("book dao save" + ","  + count + "," + dataBaseName);
+        System.out.println("book dao save" + "," + dataBaseName + "," + count);
     }
 
-    public void setCount(int count) {
+    public BookDaoImpl(int count, String dataBase) {
         this.count = count;
-    }
-
-    public void setDataBaseName(String dataBaseName) {
-        this.dataBaseName = dataBaseName;
+        this.dataBaseName = dataBase;
     }
 }
