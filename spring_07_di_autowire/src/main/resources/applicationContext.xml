@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+        <bean id="bookDao" name="dao" class="com.yxy.dao.impl.BookDaoImpl" scope="singleton"/>
+
+        <!--方式三、自动装配 (通过Service Bean下的autowire属性设置 【用于引用类型依赖注入，不能对简单类型】)-->
+        <!--1.autowire属性：byType按类型，但是有多个同类型bean会报错 找不到 (但是这种常用，因为按名称万一改名后就找不到了)-->
+        <!--
+        <bean id="bookService" name="service serviceEbi" class="com.yxy.service.impl.BookServiceImpl" autowire="byType"/>
+        -->
+        <!--按照类型，不起id也可以用-->
+        <!--<bean class="com.yxy.service.impl.BookServiceImpl" autowire="byType"/>-->
+
+        <!--2.autowire属性：byName按名称，Dao Bean的id和setBookDao方法名程匹配（会自动去掉set）-->
+        <bean id="bookService" name="service serviceEbi" class="com.yxy.service.impl.BookServiceImpl" autowire="byName"/>
+
+</beans>

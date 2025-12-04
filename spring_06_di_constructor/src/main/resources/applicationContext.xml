@@ -6,20 +6,18 @@
 
         <bean id="bookDao1" name="book" class="com.yxy.dao.impl.BookDaoImpl" scope="singleton">
                 <!--方式二、构造器注入【spring框架官方推荐构造器注入，因为严谨】 (DI依赖注入【例如Dao层注入简单类型，或者Service注入Dao对象引用类型】)-->
-                <!--这是注入简单类型的 （比如将简单类型注入到Dao层）-->
 
+                <!--这是注入简单类型的 （比如将简单类型注入到Dao层）-->
                 <!--3.下标位置写法 (name和注入构造器的形参 位置 相关联，耦合度低，解决了多个类型相同问题)-->
                 <constructor-arg index="0" value="10"/>
                 <constructor-arg index="1" value="Mysql"/>
 
-                <!--2.类型写法 (name和注入构造器的形参 类型 相关联，耦合度稍低，但无法解决多个相同类型问题)-->
-                <!--
+                <!--2.类型写法 (name和注入构造器的形参 类型 相关联，耦合度稍低，但无法解决多个相同类型问题)
                 <constructor-arg type="int" value="10"/>
                 <constructor-arg type="java.lang.String" value="Mysql"/>
                 -->
 
-                <!--1.标准写法 (name和注入构造器的形参 名称 相关联，耦合度高)-->
-                <!--
+                <!--1.标准写法 (name和注入构造器的形参 名称 相关联，耦合度高)
                 <constructor-arg name="count" value="10"/>
                 <constructor-arg name="dataBase" value="Mysql"/>
                 -->

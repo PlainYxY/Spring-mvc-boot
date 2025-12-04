@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--集合的注入-->
+    <bean id="bookDao" name="dao" class="com.yxy.dao.impl.BookDaoImpl">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>"yxy"</value>
+                <value>yyx</value>
+                <value>xyy</value>
+                <value>xyy</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>yxy</value>
+                <value>yyx</value>
+                <value>xyy</value>
+                <value>xyy</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="100"/>
+                <entry key="2" value="200"/>
+                <entry key="3" value="300"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1" >p100</prop>
+                <prop key="p2" >p200</prop>
+                <prop key="p3" >p300</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
