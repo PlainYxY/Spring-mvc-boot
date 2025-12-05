@@ -17,5 +17,5 @@
 <!--     <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
 
         <!--方式四.使用FactoryBean实例化bean (方式三的升级版)      此方法创建的bean也是单例的-->
-<!--        <bean id="userDao" class="com.yxy.factory.UserDaoFactoryBean"/>-->
+<!--    <bean id="userDao" class="com.yxy.factory.UserDaoFactoryBean"/>-->
 </beans>
