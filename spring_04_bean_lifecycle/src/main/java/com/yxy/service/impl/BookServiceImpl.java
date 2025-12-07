@@ -5,6 +5,7 @@ import com.yxy.service.BookService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+// 方式二（生命周期）实现 InitializingBean, DisposableBean 注解
 public class BookServiceImpl implements BookService, InitializingBean, DisposableBean {
 
     BookDao bookDao;

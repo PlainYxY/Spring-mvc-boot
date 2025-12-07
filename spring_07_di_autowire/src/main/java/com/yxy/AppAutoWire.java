@@ -11,7 +11,7 @@ public class AppAutoWire {
 
         BookDao bookDao = (BookDao) ctx.getBean("dao");
 
-        BookService bookService = (BookService) ctx.getBean("service");
+        BookService bookService = (BookService) ctx.getBean(BookService.class);
         bookService.save();
     }
 }

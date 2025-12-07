@@ -11,10 +11,9 @@
         <!--
         <bean id="bookService" name="service serviceEbi" class="com.yxy.service.impl.BookServiceImpl" autowire="byType"/>
         -->
-        <!--按照类型，不起id也可以用-->
-        <!--<bean class="com.yxy.service.impl.BookServiceImpl" autowire="byType"/>-->
+        <!--               按照类型，不起id也可以用-->
+        <bean class="com.yxy.service.impl.BookServiceImpl" autowire="byType"/>
 
         <!--2.autowire属性：byName按名称，Dao Bean的id和setBookDao方法名程匹配（会自动去掉set）-->
-        <bean id="bookService" name="service serviceEbi" class="com.yxy.service.impl.BookServiceImpl" autowire="byName"/>
-
+        <!--<bean id="bookService" name="service serviceEbi" class="com.yxy.service.impl.BookServiceImpl" autowire="byName"/>-->
 </beans>
