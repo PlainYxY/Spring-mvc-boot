@@ -12,6 +12,8 @@ import org.springframework.context.annotation.PropertySource;
 // 还可以细分扫描的包(因为有些bean不能乱加载) 用数组方式写
 // @ComponentScan({"com.yxy.service","com.yxy.dao"})
 
+// @PropertySource("classpath:jdbc.properties")
+// 或者这样缩写
 @PropertySource("jdbc.properties")
 public class SpringConfig {
 }
