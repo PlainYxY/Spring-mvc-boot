@@ -1,6 +1,7 @@
 package com.yxy;
 
 import com.yxy.config.SpringConfig;
+import com.yxy.dao.AccountDao;
 import com.yxy.domain.Account;
 import com.yxy.service.AccountService;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +13,12 @@ public class AppMybatis2 {
 
         AccountService accountService = ctx.getBean(AccountService.class);
 
-        Account ac = accountService.findById(1);
+        Account ac = accountService.findById(2);
         System.out.println(ac);
+
+
+        // AccountDao accountDao = ctx.getBean(AccountDao.class);
+        // Account byId = accountDao.findById(1);
+        // System.out.println(byId);
     }
 }
