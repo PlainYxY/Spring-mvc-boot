@@ -30,7 +30,7 @@ public class MybatisConfig {
 
 
     // <mappers>
-    //     <package name="com.yxy.dao"></package>
+    //     <package name="com.yxy.com.yxy.dao"></package>
     // </mappers>
 
     // 这个bean代替的上面配置文件里的这部分
