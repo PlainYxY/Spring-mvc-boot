@@ -1,0 +1,17 @@
+package com.yxy.dao.impl;
+
+import com.yxy.dao.BookDao;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BookDaoImpl implements BookDao {
+
+    public void save() {
+        System.out.println(System.currentTimeMillis());
+        System.out.println("bookDao save");
+    }
+
+    public void update() {
+        System.out.println("bookDao update");
+    }
+}

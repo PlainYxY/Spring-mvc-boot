@@ -1,0 +1,5 @@
+1.在pom文件中导入 spring-context(这个依赖下包含spring-aop) 和 aspectjweaver 两个包
+2.定义切面类：定义一个通知类，并在类上写上@Component（注册为一个bean）和 @Aspect（不要把这个类当普通bean，要当AOP处理）
+3.定义切入点：在通知类里的 切入点方法 上写注解@Pointcut("execution(void com.yxy.dao.BookDao.update())") 引号内填写需要切入的 连接点 位置
+4.绑定切入点和通知：在通知方法（需要被切入的方法）上写@Befor("pt()")（表示在切点方法之前执行）（引号内填写 切点 的方法）或者@After("pt()")（在切点后执行）
+5.在配置类 SpringConfig 上面添加@EnableAspectJAutoProxy注解，启用AspectJ自动代理

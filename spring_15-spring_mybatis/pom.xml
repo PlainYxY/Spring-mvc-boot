@@ -15,30 +15,37 @@
     </properties>
 
     <dependencies>
+        <!--spring本体包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.10.RELEASE</version>
         </dependency>
 
+        <!--德鲁伊连接池的包-->
+        <!--对这个对象负责 DruidDataSource ds = new DruidDataSource();-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.1.16</version>
         </dependency>
 
+        <!--mybatis的包-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.5.6</version>
         </dependency>
 
+        <!--mysql的包-->
+        <!--MySQL官方提供的JDBC驱动程序，对这一行负责 "com.mysql.jdbc.Driver"-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
         </dependency>
 
+        <!--提供简洁的JDBC操作模板和工具类-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -46,6 +53,7 @@
         </dependency>
 
         <!--mybatis想整合spring，所以是mybatis下的包-->
+        <!--确实这个包，那MyBatisConfig配置类就不起作用了-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
