@@ -1,0 +1,29 @@
+package com.yxy.dao;
+
+import com.yxy.domain.Account;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface AccountDao {
+
+    @Insert("insert into tab_account(name,money)values(#{name},#{money})")
+    void save(Account account);
+
+    @Delete("delete from tab_account where id = #{id} ")
+    void delete(Integer id);
+
+    @Update("update tab_account set name = #{name} , money = #{money} where id = #{id} ")
+    void update(Account account);
+
+    @Select("select * from tab_account where id = #{id} ")
+    Account findById(Integer id);
+
+    @Select("select * from tab_account")
+    List<Account> findAll();
+}
