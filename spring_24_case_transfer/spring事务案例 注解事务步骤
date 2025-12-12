@@ -1,0 +1,12 @@
+spring 事务的优点：可以将业务层中的方法里面所包含的数据层操作放入到一个事务中管理，让他们同成功，同失败
+
+
+1.在需要开启事务的 业务层接口 上写 @Transactional 注解（一般开事务不会开在业务层的实现类中，降低耦合）
+2.在 JdbcConfig配置类中，编写 spring 事务管理器（用的jdbc的事务）（如下）
+    @Bean
+    public PlatformTransactionManager（这是spring提供的标准接口） transactionManager(DataSource dataSource) {
+        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager(dataSource());
+        transactionManager.setDataSource(dataSource);
+        return transactionManager;
+    }
+3.在总配置类SpringConfig中，开启使用注解实现事务的注解标记 @EnableTransactionManagement

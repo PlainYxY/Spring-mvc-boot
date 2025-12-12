@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class MyAdvice {
 
     /// 知识点
-    // 可以写接口位置 （一般用这个，因为解耦，描述到实现类就紧耦合了）
+    // 可以写接口位置 （一般用这个，因为解耦，描述到实现类就紧耦合了）（execution()后面跟的其实是 完整的连接点方法）
     // @Pointcut("execution(void com.yxy.dao.BookDao.update())")
     // 也可以写接口实现类位置
     // @Pointcut("execution(void com.yxy.dao.impl.BookDaoImpl.update())")

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface AccountDao {
 
     @Insert("insert into tab_account(name,money)values(#{name},#{money})")
