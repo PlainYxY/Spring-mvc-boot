@@ -1,0 +1,2 @@
+在业务层接口写的这个注解（@Transactional）只能回滚Error和运行时异常，而类似 IOException 的异常，默认不参与回滚
+这个时候就需要额外加上标注 (rollbackFor = IOException.class)
