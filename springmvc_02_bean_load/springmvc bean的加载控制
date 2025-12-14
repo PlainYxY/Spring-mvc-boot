@@ -1,0 +1,13 @@
+隔离 spring 和 springmvc 相关的bean加载控制
+    方式一：Spring加载的bean设定扫描范围为 com.yxy,排除掉controller包内的bean
+        示例：
+        @ComponentScan({"com.yxy.service","com.yxy.dao"})
+    方式二：Spring加载的bean设定扫描范围为惊喜范围，例如service包、dao包等
+        示例：
+        @ComponentScan(value = "com.yxy",
+            excludeFilters = @ComponentScan.Filter(
+                    type = FilterType.ANNOTATION,
+                    classes = Controller.class
+            )
+        )
+    方式三：不区分spring与springmvc的环境，加载到同一个环境中

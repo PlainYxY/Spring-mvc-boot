@@ -1,0 +1,8 @@
+1 导入坐标 springmvc和servlet
+2 定义controller
+    2.1 使用@controller定义bean
+    2.2 设置当前操作的访问路径（用@ReuqsetMapping()注解）
+    2.3 设置当前操作的返回值类型（用@ResponseBody()注解）
+3 初始化创建springmvc的环境（配置类）（和spring配置类相似），加载controller对应的bean
+4 定义一个servlet容器启动的配置类，在里面加载springmvc环境（核心配置）
+
