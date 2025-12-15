@@ -42,10 +42,6 @@
                     <port>80</port>
                     <path>/</path>
                     <uriEncoding>UTF-8</uriEncoding>
-                    <!--<systemProperties>-->
-                    <!--    <file.encoding>UTF-8</file.encoding>-->
-                    <!--    <sun.jnu.encoding>UTF-8</sun.jnu.encoding>-->
-                    <!--</systemProperties>-->
                 </configuration>
             </plugin>
         </plugins>
