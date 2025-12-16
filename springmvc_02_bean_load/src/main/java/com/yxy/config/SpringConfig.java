@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 // Spring加载的bean设定扫描范围为 com.yxy,排除掉controller包内的bean
 // @ComponentScan({"com.yxy.service","com.yxy.dao"})
 
-// Spring加载的bean设定扫描范围为惊喜范围，例如service包、dao包等
+// Spring加载的bean设定扫描范围为精细范围，例如service包、dao包等
 @ComponentScan(value = "com.yxy",
     excludeFilters = @ComponentScan.Filter(
             type = FilterType.ANNOTATION,

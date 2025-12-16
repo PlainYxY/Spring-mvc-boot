@@ -1,0 +1,10 @@
+在形参中使用这个注解（@DateTimeFormat）来规定 日期类型 的返回格式
+@DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss") Date date
+ @DateTimeFormat注解的转换工作，都是靠 Converter接口（类型转换器）进行的
+
+举例：
+public String dateParam(Date date,
+                            @DateTimeFormat(pattern = "yyyy-mm-dd") Date date1,
+                            @DateTimeFormat(pattern = "yyyy/mm/dd hh:mm:ss") Date date2) {}
+
+

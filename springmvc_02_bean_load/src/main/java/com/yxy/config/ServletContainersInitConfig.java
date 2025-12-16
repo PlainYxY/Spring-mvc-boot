@@ -41,5 +41,4 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 //     protected String[] getServletMappings() {
 //         return new String[]{"/"};
 //     }
-//
 // }

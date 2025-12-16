@@ -1,13 +1,62 @@
 隔离 spring 和 springmvc 相关的bean加载控制
     方式一：Spring加载的bean设定扫描范围为 com.yxy,排除掉controller包内的bean
         示例：
+        Service配置 包扫描注解（详细标明方法）：
         @ComponentScan({"com.yxy.service","com.yxy.dao"})
     方式二：Spring加载的bean设定扫描范围为惊喜范围，例如service包、dao包等
         示例：
+        Service配置 包扫描注解（排除不要扫描的包方法）：
         @ComponentScan(value = "com.yxy",
             excludeFilters = @ComponentScan.Filter(
                     type = FilterType.ANNOTATION,
                     classes = Controller.class
             )
         )
-    方式三：不区分spring与springmvc的环境，加载到同一个环境中
+    方式三：不区分spring与springmvc的环境，加载到同一个环境中（一般不用）
+
+
+// 加载springmvc和spring容器的简化配置类写法
+public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    // 加载spring容器配置
+    protected Class<?>[] getRootConfigClasses() {
+        // spring配置类
+        return new Class[]{SpringConfig.class};
+    }
+
+    // 加载springMVC容器配置
+    protected Class<?>[] getServletConfigClasses() {
+        // springmvc配置类
+        return new Class[]{SpringMvcConfig.class};
+    }
+
+    // 设置哪些请求归属springMVC处理
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+}
+
+这个容器配置类的解释
+    创建两个独立的容器，形成父子关系：
+        父容器（Root Context）：由 SpringConfig.class 配置
+        子容器（Servlet Context）：由 SpringMvcConfig.class 配置
+
+Bean可见性：
+    子容器（SpringMVC）可以访问父容器中的bean
+    父容器不能访问子容器中的bean
+    子容器中的bean可以覆盖父容器中的同名bean
+
+对于Bean作用范围差异：
+    父容器（SpringConfig）：通常包含
+        业务逻辑层（Service）
+        数据访问层（Repository/DAO）
+        事务管理
+        数据源配置
+        其他非Web相关的bean
+
+    子容器（SpringMvcConfig）：通常包含
+        控制器（Controllers）
+        视图解析器
+        拦截器
+        文件上传处理
+        其他Web相关的bean

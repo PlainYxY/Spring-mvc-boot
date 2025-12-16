@@ -1,0 +1,14 @@
+用json格式传递参数举例
+1、集合参数:json格式
+2、pojo参数:json格式
+3、list pojo参数:json格式
+
+在springmvc中 启用 json格式传递参数的 步骤
+1、需要导入 jackson-databind 这个依赖
+2、在SpringMVCConfig配置类写这个注解 @EnableWebMvc（开启由json数据转换对象的功能）
+3、（在postman中测试数据选择 Body栏中的raw格式下json选项（Body——>raw——>json）（get，post都是这样传json数据的）
+4、在请求方法 形参前加 @RequestBody（形参注解）（注意：此注解在一个处理器方法只能使用一次）（最上面三种类型数据都是加这个注解就行）
+
+
+
+
