@@ -7,16 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 
 @Controller
 public class UserController {
 
     // 响应页面/页面跳转
-    @RequestMapping("/toJumpPage")
-    public String toJumpPage(){
+    @RequestMapping("/save")
+    public String save(User user){
         System.out.println("跳转页面");
         return "page.jsp";
     }

@@ -1,0 +1,14 @@
+1.跳转页面
+    不需要在方法体上加 @ResponseBody
+2.返回纯文本数据
+    需要在方法体上加 @ResponseBody
+3.返回json对象数据（对象转json）
+    需要在方法体上加 @ResponseBody
+    （这里方法return一个对象自动就转为了Json，这是jackson-databind 这个依赖帮忙转的，不是springmvc（注））
+4.返回json集合数据（对象集合转json数据）
+    需要在方法体上加 @ResponseBody
+    （这里方法return一个对象自动就转为了Json，这是jackson-databind 这个依赖帮忙转的，不是springmvc（注））
+
+
+注：
+    对于 @ResponseBody 注解，有了这个注解才会激活类型自动转换，它基于HttpMessageConverter接口转换，底层是jackson-databind 这个依赖帮忙转的
