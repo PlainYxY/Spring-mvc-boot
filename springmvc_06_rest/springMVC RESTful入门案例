@@ -1,0 +1,25 @@
+1、修改为RESTful风格需要修改注解 @RequestMapping 的参数如下所示
+    // 新增方法 修改为 RESTful风格
+    @RequestMapping(value = "/users/{id}",method = RequestMethod.POST)
+    // 新增方法
+    @RequestMapping("/save")
+2、如果方法体中需要用到类似id之类的参数，则直接写成这样（http://localhost/users/1）
+    直接在/users后面跟/【数字】
+    但是对应的，1方法体中，形参前需要加 @PathVariable注解（释义：路径变量）（表示从URL路径中 取值 给形参，比如：/users/{id}）
+              2在注解@RequestMapping的属性中设置 请求路径也应在/users后加 /{（形参名称）} 如：/users/{id}
+              举例： @RequestMapping(value = "/users/{id}",method = RequestMethod.DELETE)
+                    @ResponseBody
+                    public String delete(@PathVariable Integer id){
+                    }
+
+
+##简化Controller写法
+对于Controller层的简化写法 （从UserController ——简化—-> BookController）
+1、将每个方法上的 @RequestMapping(value = "——s")注解  统一把这个移写到类名上 @RequestMapping("——s")
+   对于有参数值的，例如：/{id}，则将这个 @RequestMapping(value = "",method = RequestMethod.DELETE) 合写为 一个 @DeleteMapping("/{id}")
+    @RequestMapping(method = RequestMethod.POST) 简化为 @PostMapping
+    @RequestMapping(method = RequestMethod.PUT)  简化为 @PutMapping
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET) 简化为 @GetMapping("/{id}")
+
+2、将每个方法上的 @ResponseBody注解，移动到类上（前提是每个方法都有@ResponseBody），并且与之前本来就在类上的 @Controller注解
+    合二为一 变成：@@RestController

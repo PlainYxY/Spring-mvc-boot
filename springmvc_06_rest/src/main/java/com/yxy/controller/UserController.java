@@ -1,66 +1,90 @@
 package com.yxy.controller;
 
-import com.yxy.domain.Address;
 import com.yxy.domain.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
 
-    // 响应页面/页面跳转
-    @RequestMapping("/save")
-    public String save(User user){
-        System.out.println("跳转页面");
-        return "page.jsp";
-    }
-
-    // 响应文本数据
-    @RequestMapping("/toText")
+    // 新增方法 修改为 RESTful风格
+    @RequestMapping(value = "/users",method = RequestMethod.POST)
     @ResponseBody
-    public String toText(){
-        System.out.println("返回纯文本数据");
-        return "response text";
+    public String save(@RequestBody User user){
+        System.out.println("user save.." + user);
+        return "{'model','user save'}:}";
     }
 
-    // 响应POJO对象（对象转json）
-    @RequestMapping("/toJsonPOJO")
+    // 新增方法
+    // @RequestMapping("/save")
+    // @ResponseBody
+    // public String save(@RequestBody User user){
+    //     System.out.println("user save.." + user);
+    //     return "{'model','user save'}:}";
+    // }
+
+    // 删除方法 修改为 RESTful风格
+    @RequestMapping(value = "/users/{id}",method = RequestMethod.DELETE)
     @ResponseBody
-    public User toJsonPOJO(){
-        System.out.println("返回json对象数据");
-        User user = new User();
-        Address address = new Address();
-        address.setProvince("Beijing");
-        address.setCity("beijing");
-
-        user.setName("yxy");
-        user.setAge(18);
-        user.setAddress(address);
-        return user;
+    public String delete(@PathVariable Integer id){
+        System.out.println("user delete.." + id);
+        return "{'model','user delete'}:}";
     }
 
-    // 响应POJO集合对象（对象集合转json数据）
-    @RequestMapping("/toJsonList")
+    // 删除方法
+    // @RequestMapping("/delete")
+    // @ResponseBody
+    // public String delete(Integer id){
+    //     System.out.println("user delete.." + id);
+    //     return "{'model','user delete'}:}";
+    // }
+
+    // 修改方法 修改为 RESTful风格
+    @RequestMapping(value = "/users",method = RequestMethod.PUT)
     @ResponseBody
-    public List<User> toJsonList(){
-        System.out.println("返回json集合数据");
-        User user1 = new User();
-        user1.setName("yxy1");
-        user1.setAge(18);
-
-        User user2 = new User();
-        user2.setName("yxy2");
-        user2.setAge(20);
-
-        List<User> userList = new ArrayList<User>();
-        userList.add(user1);
-        userList.add(user2);
-
-        return userList;
+    public String update(@RequestBody User user){
+        System.out.println("user update.." + user);
+        return "{'model','user update'}:}";
     }
+
+    // 修改方法
+    // @RequestMapping(value = "/update")
+    // @ResponseBody
+    // public String update(@RequestBody User user){
+    //     System.out.println("user update.." + user);
+    //     return "{'model','user update'}:}";
+    // }
+
+    // 查询一条数据方法 修改为 RESTful风格
+    @RequestMapping(value = "/users/{id}",method = RequestMethod.GET)
+    @ResponseBody
+    public String getById(@PathVariable Integer id){
+        System.out.println("user getById.." + id);
+        return "{'model','user getById'}:}";
+    }
+
+    // 查询一条数据方法
+    // @RequestMapping("/getById")
+    // @ResponseBody
+    // public String getById(Integer id){
+    //     System.out.println("user getById.." + id);
+    //     return "{'model','user getById'}:}";
+    // }
+
+    // 查询全部数据方法 修改为 RESTful风格
+    @RequestMapping(value = "/users",method = RequestMethod.GET)
+    @ResponseBody
+    public String getByAll(){
+        System.out.println("user getByAll..");
+        return "{'model','user getByAll'}:}";
+    }
+
+    // 查询全部数据方法
+    // @RequestMapping("/getByAll")
+    // @ResponseBody
+    // public String getByAll(){
+    //     System.out.println("user getByAll..");
+    //     return "{'model','user getByAll'}:}";
+    // }
 
 }
