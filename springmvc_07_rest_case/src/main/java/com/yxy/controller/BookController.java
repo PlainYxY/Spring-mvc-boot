@@ -21,7 +21,7 @@ public class BookController {
     @GetMapping
     public List<Book> getByAll(){
 
-        List<Book> bookList = new ArrayList<>();
+        List<Book> bookList = new ArrayList<Book>();
 
         Book book1 = new Book();
         book1.setType("小说");
