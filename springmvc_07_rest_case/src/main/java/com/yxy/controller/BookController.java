@@ -30,8 +30,8 @@ public class BookController {
 
         Book book2 = new Book();
         book2.setType("小说");
-        book2.setName("龙族");
-        book2.setDescription("nb");
+        book2.setName("活着");
+        book2.setDescription("nb too");
 
         bookList.add(book1);
         bookList.add(book2);
