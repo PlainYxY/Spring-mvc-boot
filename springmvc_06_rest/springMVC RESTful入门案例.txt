@@ -22,4 +22,4 @@
     @RequestMapping(value = "/{id}",method = RequestMethod.GET) 简化为 @GetMapping("/{id}")
 
 2、将每个方法上的 @ResponseBody注解，移动到类上（前提是每个方法都有@ResponseBody），并且与之前本来就在类上的 @Controller注解
-    合二为一 变成：@@RestController
+    合二为一 变成：@RestController
