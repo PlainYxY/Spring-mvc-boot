@@ -6,6 +6,12 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <!--快速导入的 SSM整合的 依赖和插件-->
     <dependencies>
 

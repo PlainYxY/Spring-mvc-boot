@@ -1,6 +1,6 @@
 当增删改返回是Boolean类型，查单条和多条返回Json数据
 这个时候前端不好处理，就需要写成同意的一个类，来封装数据，再回传
-主要是封装为 Result类 的这是三个参数：
+主要是封装为 Result类（一般写在了controller目录下） 的这是三个参数：
 private Integer code;   表示返回结果统一编码
 private Object data;    表示返回Json数据时具体内容，是增删改 后的true/false，或者查询后的POJO
 private String msg;     表示查询无参数返回的文字信息
