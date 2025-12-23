@@ -1,0 +1,18 @@
+概念：拦截器是一种动态拦截方法调用的机制
+作用：做增强的
+执行时机：在控制器（controller）前或后 进行执行
+
+
+拦截器可以不用 额外写在 SpringMvcSupport配置类中（继承 WebMvcConfigurationSupport）
+而可以直接让 SpringMvcConfig配置类实现 WebMvcConfigurer接口
+然后实现里面的 addInterceptors方法做拦截器配置，addResourceHandlers方法做资源过滤
+
+
+
+过滤器 拦截器 区别
+
+过滤器基于Servlet规范，作用于所有请求（包括静态资源），在DispatcherServlet之前执行，不依赖Spring容器，
+适合全局性、与业务无关的处理，如日志、编码、CORS等。
+
+拦截器属于Spring MVC机制，仅拦截Controller请求，在DispatcherServlet之后执行，可直接使用Spring Bean，
+适合业务相关逻辑，如权限校验、数据预处理等。

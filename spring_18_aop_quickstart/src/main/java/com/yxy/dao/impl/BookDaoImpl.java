@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 public class BookDaoImpl implements BookDao {
 
     public void save() {
-        System.out.println(System.currentTimeMillis());
         System.out.println("bookDao save");
     }
 

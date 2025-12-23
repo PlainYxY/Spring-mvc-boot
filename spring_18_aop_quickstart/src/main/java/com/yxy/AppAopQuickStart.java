@@ -12,5 +12,6 @@ public class AppAopQuickStart {
         BookDao bean = ac.getBean(BookDao.class);
         // bean.save();
         bean.update();
+        System.out.println(bean);
     }
 }

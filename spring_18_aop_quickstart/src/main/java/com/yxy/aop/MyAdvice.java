@@ -21,5 +21,6 @@ public class MyAdvice {
     @After("pt()")
     public void method() {
         System.out.println(System.currentTimeMillis());
+        System.out.println("test");
     }
 }
