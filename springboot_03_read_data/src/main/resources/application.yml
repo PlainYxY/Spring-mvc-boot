@@ -1,0 +1,14 @@
+lesson: SpringBoot
+
+server:
+  port: 80
+
+enterprise:
+  name: yxy
+  age: 16
+  tel: 10020
+  subject:
+    - Java
+    - 大数据
+    - 哈哈
+

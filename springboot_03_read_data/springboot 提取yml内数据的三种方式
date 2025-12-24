@@ -1,0 +1,19 @@
+// 方式一
+直接用 @Value注解加参数名称进行调用
+
+    @Value("${lesson}")
+    private String lesson;
+
+
+// 方式二
+注入 Environment对象进行 getProperty方法用参数名称调用、
+
+    @Autowired
+    private Environment environment;
+
+
+// 方式三
+创建一个和yml同名的实体类，配置 @Component 和 @ConfigurationProperties(prefix = "enterprise") 注解
+注入后进行get获取
+    @Autowired
+    private Enterprise enterprise;

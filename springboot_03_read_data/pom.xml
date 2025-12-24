@@ -18,6 +18,7 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc</artifactId>
@@ -27,6 +28,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webmvc-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <!--自定义对象封装 报警告的解决办法 添加这个依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

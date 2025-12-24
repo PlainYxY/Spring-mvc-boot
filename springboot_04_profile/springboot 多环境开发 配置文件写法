@@ -1,0 +1,25 @@
+在yml配置文件
+不同环境需要用三个横线分割开
+
+# 开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 80
+
+---
+
+# 生产环境
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 81
+
+
+
+在properties文件
+则需要分别创建对应环境名称的新文件
