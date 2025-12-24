@@ -1,0 +1,5 @@
+三个文件同时存在
+那优先级
+.properties 最高
+.yml 其次
+.yaml 最后
