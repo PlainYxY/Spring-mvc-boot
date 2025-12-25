@@ -1,0 +1,16 @@
+1、打包前先按maven中的clean
+2、然后package
+3、在 隐藏的排除文件 也就是src同级目录下找到 target目录下的jar包
+4、用java -jar jar包名  启动springboot程序
+
+
+要是报主属性清单错误，那就在pom文件中加入这个插件
+    <build>
+        <plugins>
+            <!-- 必须配置 Spring Boot Maven 插件  缺少可能报错：.jar中没有主清单属性-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>

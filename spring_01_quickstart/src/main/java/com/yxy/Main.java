@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
-        BookService bookService = new BookServiceImpl();
-        bookService.save();
+        // BookService bookService = new BookServiceImpl();
+        // bookService.save();
+        User user = new User(null);
 
 
         /*

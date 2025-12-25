@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl implements AccountService{
 
     @Autowired
     private AccountDao accountDao;
