@@ -1,0 +1,22 @@
+1、如果想用druid的数据源，则在依赖中导入，然后在.yml文件中写上（type: com.alibaba.druid.pool.DruidDataSource）
+（springboot用的是默认的数据源）
+
+2、在.yml文件中 设置数据源和端口
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db?useSSL=false
+    username: root
+    password: "0124"
+
+// .yml文件中的这个是设置端口号的，80端口可以默认不用写，那么访问页面的url就是   localhost/pages/books.html
+server:
+  port: 80
+
+
+3、删掉全部配置类，springboot都帮忙实现了
+
+4、在Dao接口上标注 @Mapper 注解
+
+5、如果有静态页面资源，则可以放到resources目录下的static文件夹中
