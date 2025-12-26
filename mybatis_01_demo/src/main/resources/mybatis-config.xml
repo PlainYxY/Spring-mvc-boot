@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+
+<!--mybatis核心配置文件-->
+<configuration>
+
+    <!--别名方式设置sql映射文件的全部名称（resultType）-->
+    <!--（不设置则需在sql映射文件内，SQL语句 resultType属性写全部名称com.yxy.pojo.User，设置完则只需要不区分大小写的写user）-->
+    <typeAliases>
+        <package name="com.yxy.pojo"/>
+    </typeAliases>
+
+    <!--environments 用来配置数据库连接 环境信息-->
+    <!--可以配置多个environment 通过default属性切换不同的environment 分别用来开发和测试或者上线之类的-->
+    <environments default="development">
+
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="0124"/>
+            </dataSource>
+        </environment>
+
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///mybatis?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="0124"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+    <mappers>
+        <!--加载SQL映射文件-->
+        <!--<mapper resource="com/yxy/mapper/UserMapper.xml"/>-->
+
+        <!--Mapper代理方式开发，因为遵守那三个开发规范，则可以直接扫描包下的所有-->
+        <package name="com/yxy/mapper"/>
+    </mappers>
+</configuration>
