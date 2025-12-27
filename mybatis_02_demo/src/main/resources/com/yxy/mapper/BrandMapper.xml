@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mybatis 映射文件-->
+
+<!--namespace: 名称空间-->
+<mapper namespace="com.yxy.mapper.BrandMapper">
+
+    <!--在mybatis-config配置文件中，写上<typeAliases>标签，则可以省略下面resultType属性的包名，只不区分大小写的写实体名称就好-->
+    <select id="selectAll" resultType="brand">
+        select * from tb_brand;
+    </select>
+
+</mapper>
